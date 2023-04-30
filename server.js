@@ -4,11 +4,13 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const errorHandler = require("./middleware/errorResponse");
-
+const errorHandler = require("./middleware/error");
+const connectDB = require("./config/db");
 // Load env vars
 dotenv.config({ path: "./config/config.env" });
 
+// Connect to database
+connectDB();
 const app = express();
 
 // Body parser
