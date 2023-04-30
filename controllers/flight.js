@@ -35,3 +35,52 @@ exports.createFlight = asyncHandler(async (req, res, next) => {
     data: flight,
   });
 });
+
+// @desc      Search flights
+// @route     GET /api/flights/search
+// @access    Public
+exports.searchFlights = asyncHandler(async (req, res, next) => {
+  const {
+    origin,
+    destination,
+    departureDate,
+    arrivalDate,
+    classType,
+    passengers,
+  } = req.query;
+
+  // Find flights matching the search criteria
+  const flights = await Flight.find({
+    origin: origin,
+    destination: destination,
+    departureDate: departureDate,
+    ...(arrivalDate && { arrivalDate: arrivalDate }), // optional arrivalDate
+    availableSeats: { $gte: passengers }, // check if availableSeats >= passengers
+  });
+
+  // Filter flights based on classType
+  const filteredFlights = flights.map((flight) => {
+    let price = null;
+    if (classType === "business") {
+      price = flight.businessPrice;
+    } else {
+      price = flight.economyPrice;
+    }
+    return {
+      _id: flight._id, // include the _id field
+      airline: flight.airline,
+      flightNumber: flight.flightNumber,
+      origin: flight.origin,
+      destination: flight.destination,
+      departureDate: flight.departureDate,
+      arrivalDate: flight.arrivalDate,
+      availableSeats: flight.availableSeats,
+      price: price,
+    };
+  });
+
+  res.status(200).json({
+    success: true,
+    data: filteredFlights,
+  });
+});
