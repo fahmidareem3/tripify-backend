@@ -84,3 +84,19 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
     data: filteredFlights,
   });
 });
+
+// @desc      Get flight by ID
+// @route     GET /api/flights/:id
+// @access    Public
+exports.getFlightById = asyncHandler(async (req, res, next) => {
+  const flight = await Flight.findById(req.params.id);
+
+  if (!flight) {
+    return next(new ErrorResponse("Flight not found", 404));
+  }
+
+  res.status(200).json({
+    success: true,
+    data: flight,
+  });
+});
