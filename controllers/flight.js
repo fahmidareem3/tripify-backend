@@ -96,7 +96,7 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
         destination: flight.destination,
         departureDate: flight.departureDate,
         returnDate: flight.returnDate,
-
+        arrivalTime: flight.arrivalTime,
         availableSeats: flight.availableSeats,
         price: price,
       };
@@ -108,7 +108,7 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
         origin: flight.origin,
         destination: flight.destination,
         departureDate: flight.departureDate,
-
+        arrivalTime: flight.arrivalTime,
         availableSeats: flight.availableSeats,
         price: price,
       };

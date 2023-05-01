@@ -70,7 +70,8 @@
         "bookedBy": null,
         "bookingStatus": false
       }
-    ]
+    ],
+    "arrivalTime": "2023-05-15T10:00:00.000Z"
   },
   {
     "airline": "Airline A",
@@ -142,7 +143,8 @@
         "bookedBy": null,
         "bookingStatus": false
       }
-    ]
+    ],
+    "arrivalTime": "2023-06-01T08:00:00.000Z"
   },
   {
     "airline": "British Airways",
@@ -215,7 +217,8 @@
         "bookedBy": null,
         "bookingStatus": false
       }
-    ]
+    ],
+    "arrivalTime": "2023-05-31T06:30:00.000Z" 
   },
   {
     "airline": "Delta",
@@ -288,7 +291,8 @@
         "bookedBy": null,
         "bookingStatus": false
       }
-    ]
+    ],
+    "arrivalTime": "2023-06-05T08:00:00.000Z"
   },
   {
     "airline": "Delta Airlines",
@@ -301,128 +305,130 @@
     "economyPrice": 150,
     "businessPrice": 350,
     "seats": [
-      {
-        "seatNumber": "1A",
-        "classType": "economy",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "1B",
-        "classType": "economy",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "2A",
-        "classType": "economy",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "2B",
-        "classType": "economy",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "3A",
-        "classType": "business",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "3B",
-        "classType": "business",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "4A",
-        "classType": "business",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "4B",
-        "classType": "business",
-        "bookedBy": null,
-        "bookingStatus": false
-      }
-    ]
-  },
-  {
-    "airline": "Emirates",
-    "flightNumber": "EK435",
-    "origin": "DXB",
-    "destination": "LAX",
-    "departureDate": "2023-05-10T00:00:00.000Z",
-    "returnDate": null,
-    "availableSeats": 400,
-    "economyPrice": 300,
-    "businessPrice": 800,
-    "seats": [
-      {
-        "seatNumber": "1A",
-        "classType": "economy",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "1B",
-        "classType": "economy",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "2A",
-        "classType": "economy",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "2B",
-        "classType": "economy",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "3A",
-        "classType": "business",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "3B",
-        "classType": "business",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "4A",
-        "classType": "business",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "4B",
-        "classType": "business",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "5A",
-        "classType": "business",
-        "bookedBy": null,
-        "bookingStatus": false
-      },
-      {
-        "seatNumber": "5B",
-        "classType": "business",
-        "bookedBy": null,
-        "bookingStatus": false
-      }
-    ]
+    {
+    "seatNumber": "1A",
+    "classType": "economy",
+    "bookedBy": null,
+    "bookingStatus": false
+    },
+    {
+    "seatNumber": "1B",
+    "classType": "economy",
+    "bookedBy": null,
+    "bookingStatus": false
+    },
+    {
+    "seatNumber": "2A",
+    "classType": "economy",
+    "bookedBy": null,
+    "bookingStatus": false
+    },
+    {
+    "seatNumber": "2B",
+    "classType": "economy",
+    "bookedBy": null,
+    "bookingStatus": false
+    },
+    {
+    "seatNumber": "3A",
+    "classType": "business",
+    "bookedBy": null,
+    "bookingStatus": false
+    },
+    {
+    "seatNumber": "3B",
+    "classType": "business",
+    "bookedBy": null,
+    "bookingStatus": false
+    },
+    {
+    "seatNumber": "4A",
+    "classType": "business",
+    "bookedBy": null,
+    "bookingStatus": false
+    },
+    {
+    "seatNumber": "4B",
+    "classType": "business",
+    "bookedBy": null,
+    "bookingStatus": false
+    }
+    ],
+    "arrivalTime": "2023-05-18T07:30:00.000Z"
+    },
+    {
+      "airline": "Emirates",
+      "flightNumber": "EK435",
+      "origin": "DXB",
+      "destination": "LAX",
+      "departureDate": "2023-05-10T00:00:00.000Z",
+      "arrivalTime": "2023-05-10T14:30:00.000Z",
+      "returnDate": null,
+      "availableSeats": 400,
+      "economyPrice": 300,
+      "businessPrice": 800,
+      "seats": [
+        {
+          "seatNumber": "1A",
+          "classType": "economy",
+          "bookedBy": null,
+          "bookingStatus": false
+        },
+        {
+          "seatNumber": "1B",
+          "classType": "economy",
+          "bookedBy": null,
+          "bookingStatus": false
+        },
+        {
+          "seatNumber": "2A",
+          "classType": "economy",
+          "bookedBy": null,
+          "bookingStatus": false
+        },
+        {
+          "seatNumber": "2B",
+          "classType": "economy",
+          "bookedBy": null,
+          "bookingStatus": false
+        },
+        {
+          "seatNumber": "3A",
+          "classType": "business",
+          "bookedBy": null,
+          "bookingStatus": false
+        },
+        {
+          "seatNumber": "3B",
+          "classType": "business",
+          "bookedBy": null,
+          "bookingStatus": false
+        },
+        {
+          "seatNumber": "4A",
+          "classType": "business",
+          "bookedBy": null,
+          "bookingStatus": false
+        },
+        {
+          "seatNumber": "4B",
+          "classType": "business",
+          "bookedBy": null,
+          "bookingStatus": false
+        },
+        {
+          "seatNumber": "5A",
+          "classType": "business",
+          "bookedBy": null,
+          "bookingStatus": false
+        },
+        {
+          "seatNumber": "5B",
+          "classType": "business",
+          "bookedBy": null,
+          "bookingStatus": false
+        }
+      ]
   },
   {
     "airline": "Airline Name",
@@ -495,7 +501,8 @@
         "bookedBy": null,
         "bookingStatus": false
       }
-    ]
+    ],
+    "arrivalTime": "2023-05-16T10:30:00.000Z"
   },
   {
     "airline": "Airline Name",
@@ -503,6 +510,7 @@
     "origin": "DAC",
     "destination": "LHR",
     "departureDate": "2023-05-15T08:00:00.000Z",
+    "arrivalTime": "2023-05-16T10:30:00.000Z",
     "availableSeats": 300,
     "economyPrice": 200,
     "businessPrice": 500,
