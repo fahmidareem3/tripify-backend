@@ -40,23 +40,28 @@ exports.createFlight = asyncHandler(async (req, res, next) => {
 // @route     GET /api/flights/search
 // @access    Public
 exports.searchFlights = asyncHandler(async (req, res, next) => {
-  const {
-    origin,
-    destination,
-    departureDate,
-    arrivalDate,
-    classType,
-    passengers,
-  } = req.query;
+  const { origin, destination, departureDate, classType, passengers } =
+    req.query;
+  let flights;
 
-  // Find flights matching the search criteria
-  const flights = await Flight.find({
-    origin: origin,
-    destination: destination,
-    departureDate: departureDate,
-    ...(arrivalDate && { arrivalDate: arrivalDate }), // optional arrivalDate
-    availableSeats: { $gte: passengers }, // check if availableSeats >= passengers
-  });
+  if (req.query.arrivalDate) {
+    const arrivalDate = req.query.arrivalDate;
+    flights = await Flight.find({
+      origin: origin,
+      destination: destination,
+      departureDate: departureDate,
+      arrivalDate: arrivalDate, // optional arrivalDate
+      availableSeats: { $gte: passengers }, // check if availableSeats >= passengers
+    });
+  } else {
+    flights = await Flight.find({
+      origin: origin,
+      destination: destination,
+      departureDate: departureDate,
+      arrivalDate: null,
+      availableSeats: { $gte: passengers }, // check if availableSeats >= passengers
+    });
+  }
 
   // Filter flights based on classType
   const filteredFlights = flights.map((flight) => {
@@ -66,17 +71,33 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
     } else {
       price = flight.economyPrice;
     }
-    return {
-      _id: flight._id, // include the _id field
-      airline: flight.airline,
-      flightNumber: flight.flightNumber,
-      origin: flight.origin,
-      destination: flight.destination,
-      departureDate: flight.departureDate,
-      arrivalDate: flight.arrivalDate,
-      availableSeats: flight.availableSeats,
-      price: price,
-    };
+
+    if (flight.arrivalDate) {
+      return {
+        _id: flight._id, // include the _id field
+        airline: flight.airline,
+        flightNumber: flight.flightNumber,
+        origin: flight.origin,
+        destination: flight.destination,
+        departureDate: flight.departureDate,
+        arrivalDate: flight.arrivalDate,
+
+        availableSeats: flight.availableSeats,
+        price: price,
+      };
+    } else {
+      return {
+        _id: flight._id, // include the _id field
+        airline: flight.airline,
+        flightNumber: flight.flightNumber,
+        origin: flight.origin,
+        destination: flight.destination,
+        departureDate: flight.departureDate,
+
+        availableSeats: flight.availableSeats,
+        price: price,
+      };
+    }
   });
 
   res.status(200).json({
