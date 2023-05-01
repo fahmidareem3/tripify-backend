@@ -4,8 +4,8 @@
     "flightNumber": "FLGHT123",
     "origin": "DAC",
     "destination": "LHR",
-    "departureDate": "2023-05-15",
-    "arrivalDate": "2023-05-16",
+    "departureDate": "2023-05-15T00:00:00.000Z",
+    "returnDate": "2023-05-16T00:00:00.000Z",
     "availableSeats": 300,
     "economyPrice": 200,
     "businessPrice": 500,
@@ -77,7 +77,7 @@
     "flightNumber": "A123",
     "origin": "JFK",
     "destination": "LAX",
-    "departureDate": "2023-06-01",
+    "departureDate": "2023-06-01T00:00:00.000Z",
     "availableSeats": 200,
     "economyPrice": 250,
     "businessPrice": 700,
@@ -149,8 +149,8 @@
     "flightNumber": "BA001",
     "origin": "LHR",
     "destination": "JFK",
-    "departureDate": "2023-05-31",
-    "arrivalDate": null,
+    "departureDate": "2023-05-31T00:00:00.000Z",
+    "returnDate": null,
     "availableSeats": 250,
     "economyPrice": 150,
     "businessPrice": 400,
@@ -222,8 +222,8 @@
     "flightNumber": "DL123",
     "origin": "JFK",
     "destination": "LAX",
-    "departureDate": "2023-06-05",
-    "arrivalDate": null,
+    "departureDate": "2023-06-05T00:00:00.000Z",
+    "returnDate": null,
     "availableSeats": 200,
     "economyPrice": 150,
     "businessPrice": 400,
@@ -295,8 +295,8 @@
     "flightNumber": "DL123",
     "origin": "LAX",
     "destination": "JFK",
-    "departureDate": "2023-05-18",
-    "arrivalDate": null,
+    "departureDate": "2023-05-18T00:00:00.000Z",
+    "returnDate": null,
     "availableSeats": 200,
     "economyPrice": 150,
     "businessPrice": 350,
@@ -356,11 +356,156 @@
     "flightNumber": "EK435",
     "origin": "DXB",
     "destination": "LAX",
-    "departureDate": "2023-05-10",
-    "arrivalDate": null,
+    "departureDate": "2023-05-10T00:00:00.000Z",
+    "returnDate": null,
     "availableSeats": 400,
     "economyPrice": 300,
     "businessPrice": 800,
+    "seats": [
+      {
+        "seatNumber": "1A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "1B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "5A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "5B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      }
+    ]
+  },
+  {
+    "airline": "Airline Name",
+    "flightNumber": "FLGHT123",
+    "origin": "DAC",
+    "destination": "LHR",
+    "departureDate": "2023-05-15T08:00:00.000Z",
+    "returnDate": "2023-05-16T06:00:00.000Z",
+    "availableSeats": 300,
+    "economyPrice": 200,
+    "businessPrice": 500,
+    "seats": [
+      {
+        "seatNumber": "1A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "1B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "5A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "5B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      }
+    ]
+  },
+  {
+    "airline": "Airline Name",
+    "flightNumber": "FLGHT123",
+    "origin": "DAC",
+    "destination": "LHR",
+    "departureDate": "2023-05-15T08:00:00.000Z",
+    "availableSeats": 300,
+    "economyPrice": 200,
+    "businessPrice": 500,
     "seats": [
       {
         "seatNumber": "1A",

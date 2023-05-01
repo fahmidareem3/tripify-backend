@@ -12,7 +12,7 @@ exports.createFlight = asyncHandler(async (req, res, next) => {
     destination,
     departureDate,
     availableSeats,
-    arrivalDate,
+    returnDate,
     economyPrice,
     businessPrice,
   } = req.body;
@@ -25,7 +25,7 @@ exports.createFlight = asyncHandler(async (req, res, next) => {
     destination,
     departureDate,
     availableSeats,
-    arrivalDate,
+    returnDate,
     economyPrice,
     businessPrice,
   });
@@ -44,21 +44,36 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
     req.query;
   let flights;
 
-  if (req.query.arrivalDate) {
-    const arrivalDate = req.query.arrivalDate;
+  if (req.query.returnDate) {
+    const returnDate = req.query.returnDate;
     flights = await Flight.find({
       origin: origin,
       destination: destination,
-      departureDate: departureDate,
-      arrivalDate: arrivalDate, // optional arrivalDate
+      $expr: {
+        $eq: [
+          { $dateToString: { format: "%Y-%m-%d", date: "$departureDate" } },
+          departureDate,
+        ],
+      },
+      $expr: {
+        $eq: [
+          { $dateToString: { format: "%Y-%m-%d", date: "$returnDate" } },
+          returnDate,
+        ],
+      },
       availableSeats: { $gte: passengers }, // check if availableSeats >= passengers
     });
   } else {
     flights = await Flight.find({
       origin: origin,
       destination: destination,
-      departureDate: departureDate,
-      arrivalDate: null,
+      $expr: {
+        $eq: [
+          { $dateToString: { format: "%Y-%m-%d", date: "$departureDate" } },
+          departureDate,
+        ],
+      },
+      returnDate: null,
       availableSeats: { $gte: passengers }, // check if availableSeats >= passengers
     });
   }
@@ -72,7 +87,7 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
       price = flight.economyPrice;
     }
 
-    if (flight.arrivalDate) {
+    if (flight.returnDate) {
       return {
         _id: flight._id, // include the _id field
         airline: flight.airline,
@@ -80,7 +95,7 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
         origin: flight.origin,
         destination: flight.destination,
         departureDate: flight.departureDate,
-        arrivalDate: flight.arrivalDate,
+        returnDate: flight.returnDate,
 
         availableSeats: flight.availableSeats,
         price: price,
@@ -105,7 +120,6 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
     data: filteredFlights,
   });
 });
-
 // @desc      Get flight by ID
 // @route     GET /api/flights/:id
 // @access    Public
