@@ -32,7 +32,7 @@ const importData = async () => {
 const deleteData = async () => {
   try {
     await Flight.deleteMany();
-    console.log("Data Destroyed...".red.inverse);
+    console.log("Data Destroyed...");
     process.exit();
   } catch (err) {
     console.error(err);

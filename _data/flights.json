@@ -1,297 +1,427 @@
 [
-    {
-        "airline": "Biman Bangladesh",
-        "flightNumber": "BG101",
-        "origin": "Dhaka",
-        "destination": "Chittagong",
-        "departureDate": "2023-06-01",
-        "arrivalDate": "2023-07-01",
-        "availableSeats": 150,
-        "economyPrice": 100,
-        "businessPrice": 300
+  {
+    "airline": "Airline Name",
+    "flightNumber": "FLGHT123",
+    "origin": "DAC",
+    "destination": "LHR",
+    "departureDate": "2023-05-15T00:00:00.000Z",
+    "arrivalDate": "2023-05-16T00:00:00.000Z",
+    "availableSeats": 300,
+    "economyPrice": 200,
+    "businessPrice": 500,
+    "seats": [
+      {
+        "seatNumber": "1A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Emirates",
-        "flightNumber": "EK102",
-        "origin": "Dubai",
-        "destination": "New York",
-        "departureDate": "2023-07-01",
-        "availableSeats": 100,
-        "economyPrice": 200,
-        "businessPrice": 500
+        "seatNumber": "1B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Qatar Airways",
-        "flightNumber": "QR103",
-        "origin": "Doha",
-        "destination": "London",
-        "departureDate": "2023-08-01",
-        "arrivalDate": "2023-08-01",
-        "availableSeats": 200,
-        "economyPrice": 150,
-        "businessPrice": 400
+        "seatNumber": "2A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Air France",
-        "flightNumber": "AF101",
-        "origin": "Paris",
-        "destination": "New York",
-        "departureDate": "2023-06-01",
-        "arrivalDate": "2023-06-02",
-        "availableSeats": 200,
-        "economyPrice": 150,
-        "businessPrice": 450
+        "seatNumber": "2B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Delta Air Lines",
-        "flightNumber": "DL202",
-        "origin": "Atlanta",
-        "destination": "Los Angeles",
-        "departureDate": "2023-06-01",
-        "arrivalDate": "2023-06-01",
-        "availableSeats": 180,
-        "economyPrice": 120,
-        "businessPrice": 360
+        "seatNumber": "3A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Emirates",
-        "flightNumber": "EK303",
-        "origin": "Dubai",
-        "destination": "London",
-        "departureDate": "2023-06-01",
-        "arrivalDate": "2023-06-01",
-        "availableSeats": 250,
-        "economyPrice": 200,
-        "businessPrice": 600
+        "seatNumber": "3B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "American Airlines",
-        "flightNumber": "AA404",
-        "origin": "Dallas",
-        "destination": "Denver",
-        "departureDate": "2023-06-01",
-        "arrivalDate": null,
-        "availableSeats": 170,
-        "economyPrice": 100,
-        "businessPrice": 300
+        "seatNumber": "4A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "British Airways",
-        "flightNumber": "BA505",
-        "origin": "London",
-        "destination": "Madrid",
-        "departureDate": "2023-06-01",
-        "arrivalDate": "2023-06-01",
-        "availableSeats": 190,
-        "economyPrice": 180,
-        "businessPrice": 540
+        "seatNumber": "4B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Lufthansa",
-        "flightNumber": "LH606",
-        "origin": "Frankfurt",
-        "destination": "Munich",
-        "departureDate": "2023-06-01",
-        "arrivalDate": "2023-06-01",
-        "availableSeats": 160,
-        "economyPrice": 90,
-        "businessPrice": 270
+        "seatNumber": "5A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Cathay Pacific",
-        "flightNumber": "CX707",
-        "origin": "Hong Kong",
-        "destination": "Taipei",
-        "departureDate": "2023-06-01",
-        "arrivalDate": "2023-06-01",
-        "availableSeats": 220,
-        "economyPrice": 120,
-        "businessPrice": 360
+        "seatNumber": "5B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      }
+    ]
+  },
+  {
+    "airline": "Airline A",
+    "flightNumber": "A123",
+    "origin": "JFK",
+    "destination": "LAX",
+    "departureDate": "2023-06-01T00:00:00.000Z",
+    "availableSeats": 200,
+    "economyPrice": 250,
+    "businessPrice": 700,
+    "seats": [
+      {
+        "seatNumber": "1A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Qantas",
-        "flightNumber": "QF808",
-        "origin": "Sydney",
-        "destination": "Melbourne",
-        "departureDate": "2023-06-01",
-        "arrivalDate": "2023-06-01",
-        "availableSeats": 200,
-        "economyPrice": 80,
-        "businessPrice": 240
+        "seatNumber": "1B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Emirates",
-        "flightNumber": "EK502",
-        "origin": "Dubai",
-        "destination": "London",
-        "departureDate": "2023-07-15",
-        "arrivalDate": "2023-07-15",
-        "availableSeats": 250,
-        "economyPrice": 200,
-        "businessPrice": 500
+        "seatNumber": "2A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Qatar Airways",
-        "flightNumber": "QR203",
-        "origin": "Doha",
-        "destination": "New York",
-        "departureDate": "2023-07-16",
-        "arrivalDate": "2023-07-16",
-        "availableSeats": 200,
-        "economyPrice": 300,
-        "businessPrice": 700
+        "seatNumber": "2B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "British Airways",
-        "flightNumber": "BA102",
-        "origin": "London",
-        "destination": "New York",
-        "departureDate": "2023-07-16",
-        "arrivalDate": "2023-07-16",
-        "availableSeats": 180,
-        "economyPrice": 250,
-        "businessPrice": 600
+        "seatNumber": "3A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "American Airlines",
-        "flightNumber": "AA201",
-        "origin": "Los Angeles",
-        "destination": "Miami",
-        "departureDate": "2023-07-16",
-        "availableSeats": 200,
-        "economyPrice": 150,
-        "businessPrice": 400
+        "seatNumber": "3B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Delta Airlines",
-        "flightNumber": "DL401",
-        "origin": "Atlanta",
-        "destination": "Chicago",
-        "departureDate": "2023-07-17",
-        "arrivalDate": "2023-07-17",
-        "availableSeats": 150,
-        "economyPrice": 125,
-        "businessPrice": 350
+        "seatNumber": "4A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "United Airlines",
-        "flightNumber": "UA301",
-        "origin": "New York",
-        "destination": "San Francisco",
-        "departureDate": "2023-07-17",
-        "arrivalDate": "2023-07-17",
-        "availableSeats": 170,
-        "economyPrice": 275,
-        "businessPrice": 650
+        "seatNumber": "4B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Air France",
-        "flightNumber": "AF802",
-        "origin": "Paris",
-        "destination": "Tokyo",
-        "departureDate": "2023-07-18",
-        "arrivalDate": "2023-07-18",
-        "availableSeats": 220,
-        "economyPrice": 350,
-        "businessPrice": 800
+        "seatNumber": "5A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Lufthansa",
-        "flightNumber": "LH502",
-        "origin": "Frankfurt",
-        "destination": "Beijing",
-        "departureDate": "2023-07-18",
-        "arrivalDate": "2023-07-19",
-        "availableSeats": 180,
-        "economyPrice": 400,
-        "businessPrice": 1000
+        "seatNumber": "5B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      }
+    ]
+  },
+  {
+    "airline": "British Airways",
+    "flightNumber": "BA001",
+    "origin": "LHR",
+    "destination": "JFK",
+    "departureDate": "2023-05-31T00:00:00.000Z",
+    "arrivalDate": null,
+    "availableSeats": 250,
+    "economyPrice": 150,
+    "businessPrice": 400,
+    "seats": [
+      {
+        "seatNumber": "1A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
       },
       {
-        "airline": "Emirates",
-        "flightNumber": "EK403",
-        "origin": "Dubai",
-        "destination": "Sydney",
-        "departureDate": "2023-08-25",
-        "arrivalDate": "2023-08-26",
-        "availableSeats": 100,
-        "economyPrice": 500,
-        "businessPrice": 1000
-    },
-    {
-        "airline": "British Airways",
-        "flightNumber": "BA010",
-        "origin": "London",
-        "destination": "New York",
-        "departureDate": "2023-09-01",
-        "arrivalDate": "2023-09-01",
-        "availableSeats": 200,
-        "economyPrice": 400,
-        "businessPrice": 800
-    },
-    {
-        "airline": "Lufthansa",
-        "flightNumber": "LH140",
-        "origin": "Frankfurt",
-        "destination": "Beijing",
-        "departureDate": "2023-09-12",
-        "arrivalDate": "2023-09-13",
-        "availableSeats": 150,
-        "economyPrice": 600,
-        "businessPrice": 1200
-    },
-    {
-        "airline": "Qatar Airways",
-        "flightNumber": "QR008",
-        "origin": "Doha",
-        "destination": "Tokyo",
-        "departureDate": "2023-10-05",
-        "arrivalDate": null,
-        "availableSeats": 50,
-        "economyPrice": 700,
-        "businessPrice": 1500
-    },
-    {
-        "airline": "Singapore Airlines",
-        "flightNumber": "SQ345",
-        "origin": "Singapore",
-        "destination": "Los Angeles",
-        "departureDate": "2023-11-18",
-        "arrivalDate": "2023-11-19",
-        "availableSeats": 180,
-        "economyPrice": 800,
-        "businessPrice": 1800
-    },
-    {
-        "airline": "Air Canada",
-        "flightNumber": "AC023",
-        "origin": "Toronto",
-        "destination": "Sydney",
-        "departureDate": "2023-12-01",
-        "arrivalDate": "2023-12-02",
-        "availableSeats": 120,
-        "economyPrice": 600,
-        "businessPrice": 1300
-    },
-    {
-        "airline": "American Airlines",
-        "flightNumber": "AA102",
-        "origin": "New York",
-        "destination": "Paris",
-        "departureDate": "2024-01-15",
-        "arrivalDate": "2024-01-15",
-        "availableSeats": 200,
-        "economyPrice": 450,
-        "businessPrice": 900
-    },
-    {
-        "airline": "Cathay Pacific",
-        "flightNumber": "CX888",
-        "origin": "Hong Kong",
-        "destination": "Vancouver",
-        "departureDate": "2024-02-20",
-        "arrivalDate": "2024-02-20",
-        "availableSeats": 150,
-        "economyPrice": 550,
-        "businessPrice": 1200
-    }
+        "seatNumber": "1B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "5A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "5B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      }
+    ]
+  },
+  {
+    "airline": "Delta",
+    "flightNumber": "DL123",
+    "origin": "JFK",
+    "destination": "LAX",
+    "departureDate": "2023-06-05T00:00:00.000Z",
+    "arrivalDate": null,
+    "availableSeats": 200,
+    "economyPrice": 150,
+    "businessPrice": 400,
+    "seats": [
+      {
+        "seatNumber": "1A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "1B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "5A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "5B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      }
+    ]
+  },
+  {
+    "airline": "Delta Airlines",
+    "flightNumber": "DL123",
+    "origin": "LAX",
+    "destination": "JFK",
+    "departureDate": "2023-05-18T00:00:00.000Z",
+    "arrivalDate": null,
+    "availableSeats": 200,
+    "economyPrice": 150,
+    "businessPrice": 350,
+    "seats": [
+      {
+        "seatNumber": "1A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "1B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      }
+    ]
+  },
+  {
+    "airline": "Emirates",
+    "flightNumber": "EK435",
+    "origin": "DXB",
+    "destination": "LAX",
+    "departureDate": "2023-05-10T00:00:00.000Z",
+    "arrivalDate": null,
+    "availableSeats": 400,
+    "economyPrice": 300,
+    "businessPrice": 800,
+    "seats": [
+      {
+        "seatNumber": "1A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "1B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2A",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "2B",
+        "classType": "economy",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "3B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "4B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "5A",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      },
+      {
+        "seatNumber": "5B",
+        "classType": "business",
+        "bookedBy": null,
+        "bookingStatus": false
+      }
+    ]
+  }
 ]
