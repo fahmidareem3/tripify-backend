@@ -54,3 +54,17 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
     data: booking,
   });
 });
+
+// @desc      Get all bookings by user
+// @route     GET /api/bookings/user
+// @access    Private
+exports.getBookingsByUser = asyncHandler(async (req, res, next) => {
+  const userId = req.user.id;
+
+  const bookings = await Booking.find({ user: userId });
+
+  res.status(200).json({
+    success: true,
+    data: bookings,
+  });
+});
