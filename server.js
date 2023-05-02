@@ -13,6 +13,7 @@ dotenv.config({ path: "./config/config.env" });
 connectDB();
 const auth = require("./routes/auth");
 const flight = require("./routes/flight");
+const booking = require("./routes/booking");
 const app = express();
 
 // Body parser
@@ -32,6 +33,7 @@ app.use(errorHandler);
 
 app.use("/api/auth", auth);
 app.use("/api/flights", flight);
+app.use("/api/booking", booking);
 const PORT = process.env.PORT || 5000;
 
 const server = app.listen(
