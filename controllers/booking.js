@@ -2,6 +2,7 @@ const asyncHandler = require("../middleware/async");
 const Flight = require("../models/Flights");
 const Booking = require("../models/Booking");
 const User = require("../models/User");
+const Invoice = require("../models/Invoice");
 
 exports.createBooking = asyncHandler(async (req, res, next) => {
   const {
@@ -80,6 +81,7 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
     quantity: 1,
     airline: flight.airline,
   };
+  const invoice = await Invoice.create(data);
   res.status(201).json({
     success: true,
     data,
@@ -97,5 +99,18 @@ exports.getBookingsByUser = asyncHandler(async (req, res, next) => {
   res.status(200).json({
     success: true,
     data: bookings,
+  });
+});
+// @desc      Get all bookings by user
+// @route     GET /api/bookings/user
+// @access    Private
+exports.getInvoiceByUser = asyncHandler(async (req, res, next) => {
+  const userId = req.user.id;
+
+  const invoices = await Invoice.find({ user: userId });
+
+  res.status(200).json({
+    success: true,
+    data: invoices,
   });
 });
