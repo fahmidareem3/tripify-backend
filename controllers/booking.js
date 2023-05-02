@@ -1,6 +1,7 @@
 const asyncHandler = require("../middleware/async");
 const Flight = require("../models/Flights");
 const Booking = require("../models/Booking");
+const User = require("../models/User");
 
 exports.createBooking = asyncHandler(async (req, res, next) => {
   const {
@@ -14,7 +15,7 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
   } = req.body;
 
   const user = req.user.id;
-  const bookingDate = Date.now();
+  const bookingDate = new Date().toISOString().slice(0, 10);
   // Create booking
 
   // Update flight with booked seats
@@ -32,9 +33,11 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
         flightseat.bookedBy = user;
         if (flightseat.classType === "economy") {
           unitPrice[i] = flight.economyPrice;
+          console.log(unitPrice[i]);
           classtype[i] = "economy";
         } else {
           unitPrice[i] = flight.businessPrice;
+          console.log(unitPrice[i]);
           classtype[i] = "business";
         }
         i++;
@@ -62,10 +65,24 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
     bookingDate,
     classtype,
   });
-
+  const requser = await User.findById(req.user.id);
+  const data = {
+    user: booking.user,
+    email: requser.email,
+    date: bookingDate,
+    bookingId: booking._id,
+    flightsource: flight.origin,
+    flightdes: flight.destination,
+    seats: seats,
+    unitPrice: unitPrice,
+    classtype: classtype,
+    totalPrice: totalPrice,
+    quantity: 1,
+    airline: flight.airline,
+  };
   res.status(201).json({
     success: true,
-    data: booking,
+    data,
   });
 });
 
