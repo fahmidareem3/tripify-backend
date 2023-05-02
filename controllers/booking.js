@@ -14,12 +14,13 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
   } = req.body;
 
   const user = req.user.id;
-
+  const bookingDate = Date.now();
   // Create booking
 
   // Update flight with booked seats
   const flight = await Flight.findById(flightNumber);
   let unitPrice = new Array(passengerNum);
+  let classtype = new Array(passengerNum);
   let i = 0;
   seats.forEach((seat) => {
     flight.seats.map((flightseat) => {
@@ -31,8 +32,10 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
         flightseat.bookedBy = user;
         if (flightseat.classType === "economy") {
           unitPrice[i] = flight.economyPrice;
+          classtype[i] = "economy";
         } else {
           unitPrice[i] = flight.businessPrice;
+          classtype[i] = "business";
         }
         i++;
       }
@@ -55,6 +58,9 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
     paymentStatus,
     unitPrice,
     totalPrice,
+    classtype,
+    bookingDate,
+    classtype,
   });
 
   res.status(201).json({
