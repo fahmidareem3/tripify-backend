@@ -25,6 +25,10 @@ const BookingSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  unitPrice: [Number],
+  classtype: [String],
+  totalPrice: Number,
+  bookingDate: Date,
 });
 
 module.exports = mongoose.model("Booking", BookingSchema);

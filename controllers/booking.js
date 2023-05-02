@@ -16,6 +16,34 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
   const user = req.user.id;
 
   // Create booking
+
+  // Update flight with booked seats
+  const flight = await Flight.findById(flightNumber);
+  let unitPrice = new Array(passengerNum);
+  let i = 0;
+  seats.forEach((seat) => {
+    flight.seats.map((flightseat) => {
+      if (
+        flightseat.seatNumber === seat &&
+        flightseat.bookingStatus === false
+      ) {
+        flightseat.bookingStatus = true;
+        flightseat.bookedBy = user;
+        if (flightseat.classType === "economy") {
+          unitPrice[i] = flight.economyPrice;
+        } else {
+          unitPrice[i] = flight.businessPrice;
+        }
+        i++;
+      }
+    });
+  });
+  let totalPrice = 0;
+  let j;
+  for (j = 0; j < passengerNum; j++) {
+    totalPrice += unitPrice[j];
+  }
+  await flight.save();
   const booking = await Booking.create({
     flightNumber,
     user,
@@ -25,29 +53,9 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
     email,
     seats,
     paymentStatus,
+    unitPrice,
+    totalPrice,
   });
-
-  // Update flight with booked seats
-  const flight = await Flight.findById(flightNumber);
-
-  seats.forEach((seat) => {
-    flight.seats.map((flightseat) => {
-      if (flightseat.seatNumber === seat) {
-        flightseat.bookingStatus = true;
-        flightseat.bookedBy = user;
-      }
-    });
-
-    // const index = flight.seats.findIndex(
-    //   (flightSeat) => flightSeat.seatNumber === seat.seatNumber
-    // );
-    // if (index >= 0) {
-    //   flight.seats[index].bookedBy = user;
-    //   flight.seats[index].bookingStatus = true;
-    // }
-  });
-
-  await flight.save();
 
   res.status(201).json({
     success: true,
