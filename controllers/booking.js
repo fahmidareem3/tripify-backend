@@ -89,7 +89,7 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
 });
 
 // @desc      Get all bookings by user
-// @route     GET /api/bookings/user
+// @route     GET /api/booking/findbyuser
 // @access    Private
 exports.getBookingsByUser = asyncHandler(async (req, res, next) => {
   const userId = req.user.id;
@@ -102,7 +102,7 @@ exports.getBookingsByUser = asyncHandler(async (req, res, next) => {
   });
 });
 // @desc      Get all bookings by user
-// @route     GET /api/bookings/user
+// @route     GET /api/booking/findinvoicebyuser
 // @access    Private
 exports.getInvoiceByUser = asyncHandler(async (req, res, next) => {
   const userId = req.user.id;
@@ -112,5 +112,21 @@ exports.getInvoiceByUser = asyncHandler(async (req, res, next) => {
   res.status(200).json({
     success: true,
     data: invoices,
+  });
+});
+
+// @desc      Get bookings by ID
+// @route     GET /api/booking/:id
+// @access    Public
+exports.getBookingById = asyncHandler(async (req, res, next) => {
+  const booking = await Booking.findById(req.params.id);
+
+  if (!booking) {
+    return next(new ErrorResponse("Booking not found", 404));
+  }
+
+  res.status(200).json({
+    success: true,
+    data: booking,
   });
 });

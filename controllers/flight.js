@@ -120,6 +120,7 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
     data: filteredFlights,
   });
 });
+
 // @desc      Get flight by ID
 // @route     GET /api/flights/:id
 // @access    Public
