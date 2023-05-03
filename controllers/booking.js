@@ -116,7 +116,7 @@ exports.getInvoiceByUser = asyncHandler(async (req, res, next) => {
 });
 
 // @desc      Get bookings by ID
-// @route     GET /api/booking/:id
+// @route     GET /api/booking/search/:id
 // @access    Public
 exports.getBookingById = asyncHandler(async (req, res, next) => {
   const booking = await Booking.findById(req.params.id);
@@ -128,5 +128,21 @@ exports.getBookingById = asyncHandler(async (req, res, next) => {
   res.status(200).json({
     success: true,
     data: booking,
+  });
+});
+
+// @desc      Get invoice by ID
+// @route     GET /api/invoice/search/:id
+// @access    Public
+exports.getInvoiceById = asyncHandler(async (req, res, next) => {
+  const invoice = await Invoice.findById(req.params.id);
+
+  if (!invoice) {
+    return next(new ErrorResponse("Invoice not found", 404));
+  }
+
+  res.status(200).json({
+    success: true,
+    data: invoice,
   });
 });
