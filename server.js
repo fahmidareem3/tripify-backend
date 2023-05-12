@@ -17,6 +17,8 @@ const booking = require("./routes/booking");
 const invoice = require("./routes/invoice");
 const app = express();
 
+//file upload
+const fileUpload = require("express-fileupload");
 // Body parser
 app.use(express.json());
 
@@ -29,13 +31,18 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use(cors());
-
+app.use(
+  fileUpload({
+    useTempFiles: true,
+  })
+);
 app.use(errorHandler);
 
 app.use("/api/auth", auth);
 app.use("/api/flights", flight);
 app.use("/api/booking", booking);
 app.use("/api/invoice", invoice);
+app.use("/api/upload", upload);
 const PORT = process.env.PORT || 5000;
 
 const server = app.listen(
