@@ -69,6 +69,38 @@ exports.createAnalyticsData = asyncHandler(async (req, res, next) => {
   });
 });
 
+exports.updateAnalyticsData = asyncHandler(async (req, res, next) => {
+  // Find all users
+  const users = await User.find();
+
+  // Iterate over each user
+  for (const user of users) {
+    // Find bookings count for the current user
+    const totalBookings = await Booking.countDocuments({ user: user._id });
+
+    // Find or create analytics data for the current user
+    let analytics = await Analytics.findOne({ user: user.name });
+
+    if (!analytics) {
+      analytics = new Analytics({ user: user.name });
+    }
+
+    // Update the total bookings count
+    analytics.totalBookings = totalBookings;
+
+    // Save the analytics data
+    await analytics.save();
+  }
+
+  // Retrieve the analytics data in sorted order by total bookings
+  const analytics = await Analytics.find().sort({ totalBookings: -1 });
+
+  res.status(200).json({
+    success: true,
+    data: analytics,
+  });
+});
+
 exports.generateBookingDataForWeek = asyncHandler(async (req, res, next) => {
   // Get the start and end dates of the week
   const currentDate = new Date();

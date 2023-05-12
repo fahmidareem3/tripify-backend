@@ -5,6 +5,7 @@ const {
   getRevenue,
   createAnalyticsData,
   generateBookingDataForWeek,
+  updateAnalyticsData,
 } = require("../controllers/analytics");
 const { protect, authorize } = require("../middleware/auth");
 const advancedResults = require("../middleware/advancedResults");
@@ -17,4 +18,7 @@ router.route("/create").post(protect, authorize("admin"), createAnalyticsData);
 router
   .route("/generatebookingdata")
   .get(protect, authorize("admin"), generateBookingDataForWeek);
+router
+  .route("/generatetopseller")
+  .put(protect, authorize("admin"), updateAnalyticsData);
 module.exports = router;
