@@ -11,5 +11,5 @@ router.route("/findinvoicebyuser").get(protect, getInvoiceByUser);
 router.route("/search/:id").get(protect, getInvoiceById);
 router
   .route("/search")
-  .get(protect, authorize("admin", "travelagent"), getInvoiceByDate);
+  .post(protect, authorize("admin", "travelagent"), getInvoiceByDate);
 module.exports = router;
