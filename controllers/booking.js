@@ -149,34 +149,11 @@ exports.getInvoiceById = asyncHandler(async (req, res, next) => {
 });
 
 exports.getInvoiceByDate = asyncHandler(async (req, res, next) => {
-  const { origin, destination } = req.query;
-  const departureDate = req.query.departureDate;
-  const returnDate = req.query.returnDate;
+  const { startDate, endDate } = req.body;
 
-  const query = {
-    origin: origin,
-    destination: destination,
-    $expr: {
-      $eq: [
-        { $dateToString: { format: "%Y-%m-%d", date: "$departureDate" } },
-        departureDate,
-      ],
-    },
-  };
-
-  if (returnDate) {
-    query.$expr.$eq.push({
-      $dateToString: { format: "%Y-%m-%d", date: "$returnDate" },
-      returnDate,
-    });
-  } else {
-    query.returnDate = null;
-  }
-
-  const flights = await Flight.find(query);
-  const flightIds = flights.map((flight) => flight._id);
-
-  const invoices = await Invoice.find({ flightNumber: { $in: flightIds } });
+  const invoices = await Invoice.find({
+    date: { $gte: startDate, $lte: endDate },
+  });
 
   res.status(200).json({
     success: true,
