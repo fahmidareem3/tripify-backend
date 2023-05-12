@@ -16,6 +16,7 @@ const flight = require("./routes/flight");
 const booking = require("./routes/booking");
 const invoice = require("./routes/invoice");
 const upload = require("./routes/upload");
+const analytics = require("./routes/analytics");
 const fileUpload = require("express-fileupload");
 const app = express();
 
@@ -43,6 +44,7 @@ app.use("/api/flights", flight);
 app.use("/api/booking", booking);
 app.use("/api/invoice", invoice);
 app.use("/api/upload", upload);
+app.use("/api/analytics", analytics);
 const PORT = process.env.PORT || 5000;
 
 const server = app.listen(
