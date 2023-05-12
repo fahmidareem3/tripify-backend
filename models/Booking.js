@@ -5,7 +5,7 @@ const BookingSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: "User",
   },
-  flight: {
+  flightNumber: {
     type: mongoose.Schema.ObjectId,
     ref: "Flights",
   },

@@ -99,6 +99,8 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
         arrivalTime: flight.arrivalTime,
         availableSeats: flight.availableSeats,
         price: price,
+        sourceName: flight.sourceName,
+        destinationName: flight.destinationName,
       };
     } else {
       return {
@@ -111,6 +113,8 @@ exports.searchFlights = asyncHandler(async (req, res, next) => {
         arrivalTime: flight.arrivalTime,
         availableSeats: flight.availableSeats,
         price: price,
+        sourceName: flight.sourceName,
+        destinationName: flight.destinationName,
       };
     }
   });

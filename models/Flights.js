@@ -8,6 +8,8 @@ const FlightSchema = new mongoose.Schema({
   departureDate: {
     type: Date,
   },
+  sourceName: String,
+  destinationName: String,
   returnDate: Date,
   arrivalTime: Date,
   availableSeats: Number,

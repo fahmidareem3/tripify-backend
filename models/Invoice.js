@@ -15,6 +15,10 @@ const invoiceSchema = new mongoose.Schema({
     default: Date.now,
     required: true,
   },
+  flightNumber: {
+    type: mongoose.Schema.ObjectId,
+    ref: "Flights",
+  },
   bookingId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Booking",

@@ -15,10 +15,10 @@ const auth = require("./routes/auth");
 const flight = require("./routes/flight");
 const booking = require("./routes/booking");
 const invoice = require("./routes/invoice");
+const upload = require("./routes/upload");
+const fileUpload = require("express-fileupload");
 const app = express();
 
-//file upload
-const fileUpload = require("express-fileupload");
 // Body parser
 app.use(express.json());
 
