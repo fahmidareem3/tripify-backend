@@ -51,6 +51,8 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
     totalPrice += unitPrice[j];
   }
   await flight.save();
+  const sourceName = flight.sourceName;
+  const destinationName = flight.destinationName;
   const booking = await Booking.create({
     flightNumber,
     user,
@@ -65,9 +67,11 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
     classtype,
     bookingDate,
     classtype,
+    sourceName,
+    destinationName,
   });
   const requser = await User.findById(req.user.id);
-  const data = {
+  let data = {
     user: booking.user,
     email: requser.email,
     date: bookingDate,
@@ -81,8 +85,12 @@ exports.createBooking = asyncHandler(async (req, res, next) => {
     quantity: 1,
     airline: flight.airline,
     flightNumber: flight._id,
+    sourceName,
+    destinationName,
   };
   const invoice = await Invoice.create(data);
+
+  data.invoiceId = invoice._id;
   res.status(201).json({
     success: true,
     data,

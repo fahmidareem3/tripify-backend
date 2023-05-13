@@ -25,6 +25,8 @@ const BookingSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  sourceName: String,
+  destinationName: String,
   unitPrice: [Number],
   classtype: [String],
   totalPrice: Number,
