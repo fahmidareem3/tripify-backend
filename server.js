@@ -4,6 +4,8 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const swaggerUI = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
 const errorHandler = require("./middleware/error");
 const connectDB = require("./config/db");
 // Load env vars
@@ -37,6 +39,35 @@ app.use(
     useTempFiles: true,
   })
 );
+// Define Swagger options
+const options = {
+  failOnErrors: true,
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Tripify",
+      description: "A flight booking and sales report generation application",
+      version: "1.0.0",
+    },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          in: "header",
+          name: "Authorization",
+          description: "Bearer token to access these api endpoints",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
+  },
+  apis: ["./routes/*.js"],
+};
+const swaggerDocs = swaggerJsDoc(options);
+
+// Create a route to serve Swagger UI documentation
+
 app.use(errorHandler);
 
 app.use("/api/auth", auth);
@@ -45,6 +76,7 @@ app.use("/api/booking", booking);
 app.use("/api/invoice", invoice);
 app.use("/api/upload", upload);
 app.use("/api/analytics", analytics);
+app.use("/api", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 const PORT = process.env.PORT || 5000;
 
 const server = app.listen(
